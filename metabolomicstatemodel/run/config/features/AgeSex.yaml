@@ -1,0 +1,27 @@
+# @package experiment.feature_set.CVDCoreVariablesWithPGS
+categorical:
+  basics: [
+    'age_at_recruitment',
+    'sex'
+  ]
+  questionnaire: [
+  ]
+  metabolomics: []
+one_hot_enc:
+  basics: [
+    'age_at_recruitment',
+    'sex'
+  ]
+  questionnaire: [
+  ]
+  metabolomics: []
+general:
+  metabolomics: []
+  measurements: [
+    ]
+  labs: [
+    ]
+  family_history: [
+    ]
+  diagnoses: []
+  medications: []

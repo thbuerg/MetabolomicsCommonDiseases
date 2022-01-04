@@ -1,0 +1,24 @@
+﻿# @package experiment.feature_set.PANEL
+categorical:
+  basics: []
+  questionnaire: []
+one_hot_enc:
+  basics: []
+  questionnaire: []
+general:
+  pgs: []
+  measurements: []
+  labs: [
+      "albumin",
+      "cholesterol",
+      "hdl_cholesterol",
+      "ldl_direct",
+      "triglycerides",
+      "glucose",
+      "creatinine",
+      "urea",
+      "urate",
+  ]
+  family_history: []
+  diagnoses: []
+  medications: []

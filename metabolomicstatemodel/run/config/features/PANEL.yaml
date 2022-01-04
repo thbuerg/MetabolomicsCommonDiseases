@@ -1,0 +1,61 @@
+﻿# @package experiment.feature_set.PANEL
+categorical:
+  basics: [
+      'age_at_recruitment',
+      'sex',
+  ]
+  questionnaire: [
+  ]
+one_hot_enc:
+  basics: [
+      'sex',
+      'age_at_recruitment'
+  ]
+  questionnaire: [
+      'smoking_status_2.0',
+      'alcohol_intake_frequency_2.0',
+  ]
+general:
+  pgs: []
+  measurements: [
+      'daily_physical_activity',
+      'daily_healthy_food',
+      'education_years',
+      'body_mass_index_bmi',
+      'waist_hip_ratio',
+      'weight',
+      "standing_height",
+      'systolic_blood_pressure',
+  ]
+  labs: [
+      "cholesterol",
+      "hdl_cholesterol",
+      "ldl_direct",
+      "triglycerides",
+      "glucose",
+      "glycated_haemoglobin_hba1c",
+      "creatinine",
+      "cystatin_c",
+      "urea",
+      "urate",
+      'aspartate_aminotransferase',
+      'alanine_aminotransferase',
+      'alkaline_phosphatase',
+      'albumin',
+      "creactive_protein",
+      'red_blood_cell_erythrocyte_count',
+      'white_blood_cell_leukocyte_count',
+      'platelet_count',
+      'haemoglobin_concentration',
+      'haematocrit_percentage',
+      'mean_corpuscular_haemoglobin',
+      'mean_corpuscular_volume',
+      'mean_corpuscular_haemoglobin_concentration'
+  ]
+  family_history: [
+      'fh_diabetes',
+  ]
+  diagnoses: []
+  medications: [
+      "antihypertensives",
+  ]
