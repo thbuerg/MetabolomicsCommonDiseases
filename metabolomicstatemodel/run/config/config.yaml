@@ -1,0 +1,242 @@
+data_dir: /path/to/data
+code_dir: /path/to/repo_base
+setup:
+  project: YourNeptune/Project
+  name: MSM
+  tags: MSM_train
+trainer:
+  default_root_dir: ${data_dir}/results/models
+  gpus: 1
+  precision: 16
+  val_check_interval: 1.0
+  overfit_batches: 0.0
+  fast_dev_run: False
+  track_grad_norm: 0
+  max_epochs: 100
+  stochastic_weight_avg: True
+  auto_lr_find: False
+experiment:
+  seed: 23
+  num_workers: 4
+  monitor: "Avg__C_10"
+  report_train_metrics: False
+  evaluation_time_points: [10]
+  evaluation_quantile_bins: None
+  write_calibrated_predictions: False
+  task_names: [
+      "M_MACE",
+      "M_all_cause_dementia",
+      "M_type_2_diabetes",
+      "M_liver_disease",
+      "M_renal_disease",
+      "M_atrial_fibrillation",
+      "M_heart_failure",
+      "M_coronary_heart_disease",
+      "M_venous_thrombosis",
+      "M_cerebral_stroke",
+      "M_abdominal_aortic_aneurysm",
+      "M_peripheral_arterial_disease",
+      "M_asthma",
+      "M_chronic_obstructuve_pulmonary_disease",
+      "M_lung_cancer",
+      "M_non_melanoma_skin_cancer",
+      "M_colon_cancer",
+      "M_rectal_cancer",
+      "M_prostate_cancer",
+      "M_breast_cancer",
+      "M_parkinsons_disease",
+      "M_fractures",
+      "M_cataracts",
+      "M_glaucoma"
+  ]
+  task_weights:
+      M_MACE: 1,
+      M_all_cause_dementia: 1,
+      M_type_2_diabetes: 1,
+      M_liver_disease: 1,
+      M_renal_disease: 1,
+      M_atrial_fibrillation: 1,
+      M_heart_failure: 1,
+      M_coronary_heart_disease: 1,
+      M_venous_thrombosis: 1,
+      M_cerebral_stroke: 1,
+      M_haemorrhagic_stroke: 1,
+      M_abdominal_aortic_aneurysm: 1,
+      M_peripheral_arterial_disease: 1,
+      M_asthma: 1,
+      M_chronic_obstructuve_pulmonary_disease: 1,
+      M_lung_cancer: 1,
+      M_non_melanoma_skin_cancer: 1,
+      M_colon_cancer: 1,
+      M_rectal_cancer: 1,
+      M_prostate_cancer: 1,
+      M_breast_cancer: 1,
+      M_parkinsons_disease: 1,
+      M_fractures: 1,
+      M_cataracts: 1,
+      M_glaucoma: 1
+  event: [
+      "M_MACE_event",
+      "M_all_cause_dementia_event",
+      "M_type_2_diabetes_event",
+      "M_liver_disease_event",
+      "M_renal_disease_event",
+      "M_atrial_fibrillation_event",
+      "M_heart_failure_event",
+      "M_coronary_heart_disease_event",
+      "M_venous_thrombosis_event",
+      "M_cerebral_stroke_event",
+      "M_abdominal_aortic_aneurysm_event",
+      "M_peripheral_arterial_disease_event",
+      "M_asthma_event",
+      "M_chronic_obstructuve_pulmonary_disease_event",
+      "M_lung_cancer_event",
+      "M_non_melanoma_skin_cancer_event",
+      "M_colon_cancer_event",
+      "M_rectal_cancer_event",
+      "M_prostate_cancer_event",
+      "M_breast_cancer_event",
+      "M_parkinsons_disease_event",
+      "M_fractures_event",
+      "M_cataracts_event",
+      "M_glaucoma_event"
+  ]
+  duration: [
+      "M_MACE_event_time",
+      "M_all_cause_dementia_event_time",
+      "M_type_2_diabetes_event_time",
+      "M_liver_disease_event_time",
+      "M_renal_disease_event_time",
+      "M_atrial_fibrillation_event_time",
+      "M_heart_failure_event_time",
+      "M_coronary_heart_disease_event_time",
+      "M_venous_thrombosis_event_time",
+      "M_cerebral_stroke_event_time",
+      "M_abdominal_aortic_aneurysm_event_time",
+      "M_peripheral_arterial_disease_event_time",
+      "M_asthma_event_time",
+      "M_chronic_obstructuve_pulmonary_disease_event_time",
+      "M_lung_cancer_event_time",
+      "M_non_melanoma_skin_cancer_event_time",
+      "M_colon_cancer_event_time",
+      "M_rectal_cancer_event_time",
+      "M_prostate_cancer_event_time",
+      "M_breast_cancer_event_time",
+      "M_parkinsons_disease_event_time",
+      "M_fractures_event_time",
+      "M_cataracts_event_time",
+      "M_glaucoma_event_time"
+  ]
+  cohort_definition:
+    general:
+      train: "NMR_FLAG==True"
+      valid: "NMR_FLAG==True"
+      test: "NMR_FLAG==True"
+    task_specific:
+        M_MACE: "M_MACE==False&statins==False"
+        M_all_cause_dementia: "M_all_cause_dementia==False"
+        M_type_2_diabetes: "M_type_2_diabetes==False"
+        M_liver_disease: "M_liver_disease==False"
+        M_renal_disease: "M_renal_disease==False"
+        M_atrial_fibrillation: "M_atrial_fibrillation==False"
+        M_heart_failure: "M_heart_failure==False"
+        M_coronary_heart_disease: "M_coronary_heart_disease==False"
+        M_venous_thrombosis: "M_venous_thrombosis==False"
+        M_cerebral_stroke: "M_cerebral_stroke==False"
+        M_abdominal_aortic_aneurysm: "M_abdominal_aortic_aneurysm==False"
+        M_peripheral_arterial_disease: "M_peripheral_arterial_disease==False"
+        M_asthma: "M_asthma==False"
+        M_chronic_obstructuve_pulmonary_disease: "M_chronic_obstructuve_pulmonary_disease==False"
+        M_lung_cancer: "M_lung_cancer==False"
+        M_non_melanoma_skin_cancer: "M_non_melanoma_skin_cancer==False"
+        M_colon_cancer: "M_colon_cancer==False"
+        M_rectal_cancer: "M_rectal_cancer==False"
+        M_prostate_cancer: "M_prostate_cancer==False&sex=='Male'"
+        M_breast_cancer: "M_breast_cancer==False&sex=='Female'"
+        M_parkinsons_disease: "M_parkinsons_disease==False"
+        M_fractures: "M_fractures==False"
+        M_cataracts: "M_cataracts==False"
+        M_glaucoma: "M_glaucoma==False"
+  task_specific_exclusions: True
+  datamodule: UKBBSurvivalDatamoduleWithExclusions
+  task: ResidualMultiTaskSurvivalTraining
+  cv_partition: 7
+  feature_set: AgeSexMetabolomics
+  features_yaml: ${code_dir}/riskiano/source/config/features/${experiment.feature_set}.yaml
+  tabular_filepath: ${data_dir}/data/tabular/210714_metabolomics
+  latent_dim: 512
+  module: MLP
+  module_kwargs:
+    snn_init: False
+    hidden_dim: [256, 256, 256]
+    output_dim: ${experiment.latent_dim}
+    norm_fn: 'nn.BatchNorm1d'
+    norm_layer: [0]
+    input_norm: False
+    final_norm: False
+    dropout_fn: "nn.Dropout"
+    dropout: 0.3
+    dropout_after_norm: False
+    activation: "nn.SiLU"
+    final_activation: "nn.SiLU"
+  latent_module: ResidualHeadMLP
+  latent_module_kwargs:
+    latent_dim: 32
+    mlp: MLP
+    mlp_kwargs:
+      snn_init: False
+      input_dim: ${experiment.latent_dim}
+      hidden_dim: [256, 128]
+      output_dim: ${experiment.latent_module_kwargs.latent_dim}
+      activation_fn: "nn.SiLU"
+      dropout_fn: "nn.Dropout"
+      norm_fn: 'nn.BatchNorm1d'
+      norm_layer: "all"
+      input_norm: False
+      final_norm: True
+      dropout: 0.6
+      dropout_after_norm: True
+      activation: "nn.SiLU"
+      final_activation: "nn.SiLU"
+    skip_connection_mlp: MLP
+    skip_connection_mlp_kwargs:
+      snn_init: False
+      hidden_dim: [128, 128]
+      output_dim: ${experiment.latent_module_kwargs.latent_dim}
+      activation_fn: "nn.SiLU"
+      dropout_fn: "nn.Dropout"
+      norm_fn: 'nn.BatchNorm1d'
+      norm_layer: "all"
+      input_norm: False
+      final_norm: True
+      dropout: 0.6
+      dropout_after_norm: True
+      activation: "nn.SiLU"
+      final_activation: "nn.SiLU"
+    predictor_mlp: MLP
+    predictor_mlp_kwargs:
+      snn_init: False
+      input_dim: ${experiment.latent_module_kwargs.latent_dim}
+      hidden_dim: [128, 128]
+      output_dim: 1
+      activation_fn: "nn.SiLU"
+      dropout_fn: "nn.Dropout"
+      norm_fn: 'nn.BatchNorm1d'
+      norm_layer: "all"
+      input_norm: False
+      final_norm: True
+      dropout: 0.6
+      dropout_after_norm: True
+      activation: "nn.SiLU"
+      final_activation: "nn.Identity"
+  optimizer: "torch.optim.Adam"
+  optimizer_kwargs: {weight_decay: 1e-8}
+  schedule: MultiStepLR
+  schedule_kwargs: {milestones:[20, 30, 40], gamma: 0.1, verbose: True}
+  n_events: 1
+  batch_size: 1024
+  lr: 0.001
+  survival_task: DeepSurv
+  survival_task_kwargs:
+    batch_size: ${experiment.batch_size}
+    num_workers: ${experiment.num_workers}

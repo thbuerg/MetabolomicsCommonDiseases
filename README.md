@@ -49,13 +49,14 @@ pip install -r requirements.txt
 
 3. Set up [Neptune.ai](https://www.neptune.ai)
 
-4. Edit the `.yaml` config files in `metabolomicstatemodel/run/config/`:
+4. Edit the `config.yaml` in `metabolomicstatemodel/run/config/`:
 ```yaml
+data_dir: /path/to/data
+code_dir: /path/to/repo_base
 setup:
-  project_name: <YourNeptuneSpace>/<YourProject>
-  root_dir: absolute/path/to/this/repo/
+  project: <YourNeptuneWorkspace>/<YourProject>
 experiment:
-  tabular_filepath: path/to/processed/data
+  tabular_filepath: /path/to/processed/data
 ```
 
 5. Train the NeuralCVD Model (make sure you are on a machine w/ GPU)
