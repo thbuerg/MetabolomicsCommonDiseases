@@ -1,19 +1,19 @@
 <div align="center">
 
-
 ![Logo](./src/msm_logo.png?raw=true "Logo")
 
 ⛑ **Metabolomic profiles predict individual multi-disease outcomes in the UK Biobank cohort** ⛑
 
 [comment]: <> (<!--)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thbuerg/MetabolomicsCommonDiseases/<URL>)
-[![Paper](http://img.shields.io/badge/paper-arxiv.1001.2234-B31B1B.svg)](https://www.nature.com/articles/nature14539)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thbuerg/MetabolomicsCommonDiseases/blob/main/analysis/examples/MetabolomicsInference.ipynb)
+[![Paper](https://img.shields.io/badge/Paper-tbd-red)](https://www.nature.com/articles/nature14539)
+[![Weights](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.5825106-green)](https://sandbox.zenodo.org/record/990127)
 
 [comment]: <> (-->)
 
 </div>
- 
+
 ## Description   
 Code related to the paper "Metabolomic profiles predict individual multi-disease outcomes in the UK Biobank cohort". 
 This repo is a python package for preprocessing UK Biobank data and preprocessing, training and evaluating the proposed MetabolomicStateModel score.
@@ -34,7 +34,8 @@ This repo contains code to preprocess [UK Biobank](https://www.ukbiobank.ac.uk/)
 - Visualization contains the code to generate the figures displayed in the paper. 
 
 ## Use the MetabolomicStateModel on your data
-We provide you a ready-to-use [Google colab notebook](./metabolomicstatemodel/examples/MetabolomicsInference.ipynb) with a trained version of our MetabolomicStateModel. Upload you batch of Nightingale NMR metabolomics data and run the model!
+We provide you a ready-to-use [Google colab notebook](https://colab.research.google.com/github/thbuerg/MetabolomicsCommonDiseases/blob/main/analysis/examples/MetabolomicsInference.ipynb) with a trained version of our MetabolomicStateModel. Upload your dataset of Nightingale NMR metabolomics and run the model!
+**NOTE**: Data must be provided in [this format](https://github.com/thbuerg/MetabolomicsCommonDiseases/blob/main/analysis/examples/sample.csv).
 
 ## How to train the MetabolomicStateModel  
 1. First, install dependencies   
