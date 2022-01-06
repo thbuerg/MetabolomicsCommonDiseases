@@ -1,13 +1,16 @@
-<div align="center">    
+<div align="center">
+
 
 ![Logo](./src/msm_logo.png?raw=true "Logo")
 
-
 ⛑ **Metabolomic profiles predict individual multi-disease outcomes in the UK Biobank cohort** ⛑
 
-<!--
+[comment]: <> (<!--)
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thbuerg/MetabolomicsCommonDiseases/<URL>)
 [![Paper](http://img.shields.io/badge/paper-arxiv.1001.2234-B31B1B.svg)](https://www.nature.com/articles/nature14539)
--->
+
+[comment]: <> (-->)
 
 </div>
  
@@ -31,7 +34,7 @@ This repo contains code to preprocess [UK Biobank](https://www.ukbiobank.ac.uk/)
 - Visualization contains the code to generate the figures displayed in the paper. 
 
 ## Use the MetabolomicStateModel on your data
-We provide you a ready-to-use [Google colab notebook](https://www.google.com) with a trained version of our MetabolomicStateModel. Upload you batch of Nightingale NMR metabolomics data and run the model!
+We provide you a ready-to-use [Google colab notebook](./metabolomicstatemodel/examples/MetabolomicsInference.ipynb) with a trained version of our MetabolomicStateModel. Upload you batch of Nightingale NMR metabolomics data and run the model!
 
 ## How to train the MetabolomicStateModel  
 1. First, install dependencies   
