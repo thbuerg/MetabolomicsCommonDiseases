@@ -62,7 +62,7 @@ experiment:
 5. Train the NeuralCVD Model (make sure you are on a machine w/ GPU)
  ```bash
 # module folder
-cd metabolomicstatemodel
+cd source
 
 # run training
 bash run/run_MSM.sh

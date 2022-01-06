@@ -1,7 +1,10 @@
-data_dir: /path/to/data
-code_dir: /path/to/repo_base
+#data_dir: /path/to/data
+#code_dir: /path/to/repo_base
+data_dir: /sc-projects/sc-proj-ukb-cvd
+code_dir: /home/buergelt/projects/cardiors/code/MetabolomicsCommonDiseases
 setup:
-  project: YourNeptune/Project
+#  project: YourNeptune/Project
+  project: CardioRS/metabolomics
   name: MSM
   tags: MSM_train
 trainer:
@@ -160,9 +163,9 @@ experiment:
   task_specific_exclusions: True
   datamodule: UKBBSurvivalDatamoduleWithExclusions
   task: ResidualMultiTaskSurvivalTraining
-  cv_partition: 7
-  feature_set: AgeSexMetabolomics
-  features_yaml: ${code_dir}/riskiano/source/config/features/${experiment.feature_set}.yaml
+  cv_partition: 0
+  feature_set: Metabolomics
+  features_yaml: ${code_dir}/metabolomicstatemodel/source/config/features/${experiment.feature_set}.yaml
   tabular_filepath: ${data_dir}/data/tabular/210714_metabolomics
   latent_dim: 512
   module: MLP

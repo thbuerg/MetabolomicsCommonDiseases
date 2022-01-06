@@ -3,9 +3,9 @@ import pandas as pd
 import numpy as np
 import pytorch_lightning as pl
 from torch.utils.data import DataLoader
-
-from riskiano.source.datasets import TabularDataset, DatasetWrapper, BatchedDS, ExclusionMaskDataset
 from omegaconf import OmegaConf, ListConfig, DictConfig
+
+from .datasets import TabularDataset, DatasetWrapper, BatchedDS, ExclusionMaskDataset
 
 
 class RiskianoDataModule(pl.LightningDataModule):

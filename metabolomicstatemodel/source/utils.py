@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import pytorch_lightning as pl
 
-from riskiano.source.logging.logging import FoolProofNeptuneLogger
+from .logging import FoolProofNeptuneLogger
 
 
 ####################################################################################################

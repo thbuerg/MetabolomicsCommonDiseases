@@ -14,11 +14,11 @@ from torch.nn import Sigmoid, SELU, ReLU
 from torch.optim.lr_scheduler import CosineAnnealingWarmRestarts, ReduceLROnPlateau, MultiStepLR
 from pytorch_lightning.callbacks import LearningRateMonitor, StochasticWeightAveraging
 
-from metabolomicstatemodel.source.datamodules import *
-from metabolomicstatemodel.source.tasks import *
-from metabolomicstatemodel.source.modules import *
-from metabolomicstatemodel.source.utils import set_up_neptune, get_default_callbacks
-from metabolomicstatemodel.source.callbacks import WriteCheckpointLogs, WritePredictionsDataFrame, LogCoxBaseline, WriteLatentsDataFrame
+from source.datamodules import *
+from source.tasks import *
+from source.modules import *
+from source.utils import set_up_neptune, get_default_callbacks
+from source.callbacks import WriteCheckpointLogs, WritePredictionsDataFrame
 
 
 # globals:
@@ -29,7 +29,7 @@ pl.seed_everything(23)  #the number of doom
 
 
 assert os.environ['NEPTUNE_API_TOKEN'], 'No Neptune API Token found. Please do `export NEPTUNE_API_TOKEN=<token>`.'
-config_path = "config/"
+config_path = "source/config/"
 
 
 @hydra.main(config_path, config_name="config")
@@ -71,9 +71,12 @@ def train(FLAGS: DictConfig):
                 **FLAGS.experiment)
 
     # initialize trainer
-    callbacks = get_default_callbacks(monitor=FLAGS.experiment.monitor) \
-    callbacks += [WriteCheckpointLogs(),
-                  WritePredictionsDataFrame(write_calibrated_predictions=FLAGS.experiment.write_calibrated_predictions)]
+    callbacks = get_default_callbacks(monitor=FLAGS.experiment.monitor)
+    callbacks.extend([WriteCheckpointLogs(),
+                      WritePredictionsDataFrame(
+                          write_calibrated_predictions=FLAGS.experiment.write_calibrated_predictions)
+                      ]
+                     )
 
     trainer = pl.Trainer(**FLAGS.trainer,
                          callbacks=callbacks,
@@ -91,4 +94,4 @@ def train(FLAGS: DictConfig):
 
 
 if __name__ == '__main__':
-    main()
+    train()
