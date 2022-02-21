@@ -75,7 +75,7 @@ bash run/run_MSM.sh
 ## Citation   
 ```
 @article{thisonecoolstory,
-  title={Neural network-based integration of polygenic and clinical information: Development and validation of a prediction model for 10 year risk of major adverse cardiac events in the UK Biobank cohort},
+  title={Metabolomic profiles predict individual multi-disease outcomes in the UK Biobank cohort},
   author={Jakob Steinfeldt, Thore Buergel},
   journal={tbd},
   year={2022}
