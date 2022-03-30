@@ -34,8 +34,10 @@ This repo contains code to preprocess [UK Biobank](https://www.ukbiobank.ac.uk/)
 - Visualization contains the code to generate the figures displayed in the paper. 
 
 ## Use the MetabolomicStateModel on your data
-We provide you a ready-to-use [Google colab notebook](https://colab.research.google.com/github/thbuerg/MetabolomicsCommonDiseases/blob/main/analysis/examples/MetabolomicsInference.ipynb) with a trained version of our MetabolomicStateModel. Upload your dataset of Nightingale NMR metabolomics and run the model!
-**NOTE**: Data must be provided in [this format](https://github.com/thbuerg/MetabolomicsCommonDiseases/blob/main/analysis/examples/sample.csv).
+We provide you a ready-to-use [Google colab notebook](https://colab.research.google.com/github/thbuerg/MetabolomicsCommonDiseases/blob/main/analysis/examples/MetabolomicsInference.ipynb) with a trained version of our MetabolomicStateModel. Upload your dataset of Nightingale NMR metabolomics and run the model!  
+ 
+**NOTE**: Data must be provided in [this format](https://github.com/thbuerg/MetabolomicsCommonDiseases/blob/main/analysis/examples/sample.csv).  
+ 
 **DISCLAIMER**: We provide the normalization pipeline as fitted on UK Biobank. Depending on the distribution of NMR metabolites in your cohort, rescaling of the data with cohort-specific parameters might be advisable.
 
 ## How to train the MetabolomicStateModel  
