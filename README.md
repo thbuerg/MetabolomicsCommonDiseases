@@ -38,7 +38,7 @@ We provide you a ready-to-use [Google colab notebook](https://colab.research.goo
  
 **NOTE**: Data must be provided in [this format](https://github.com/thbuerg/MetabolomicsCommonDiseases/blob/main/analysis/examples/sample.csv).  
  
-**DISCLAIMER**: We provide the normalization pipeline as fitted on UK Biobank. Depending on the distribution of NMR metabolites in your cohort, rescaling of the data with cohort-specific parameters might be advisable.
+**DISCLAIMER**: This model is not intended for clinical use. We provide the NMR normalization pipeline as fitted on UK Biobank. Cohort-specific rescaling might be advisable.
 
 ## How to train the MetabolomicStateModel  
 1. First, install dependencies   
