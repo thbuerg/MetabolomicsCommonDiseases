@@ -7,7 +7,7 @@
 [comment]: <> (<!--)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thbuerg/MetabolomicsCommonDiseases/blob/main/analysis/examples/MetabolomicsInference.ipynb)
-[![Paper](https://img.shields.io/badge/Paper-tbd-red)](https://www.nature.com/articles/nature14539)
+[![Paper](https://img.shields.io/badge/Paper-Nature%20Medicine-red)](https://www.nature.com/articles/s41591-022-01980-3)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6200202.svg)](https://doi.org/10.5281/zenodo.6200202)
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
@@ -88,10 +88,12 @@ This work is licensed under a
 
 ## Citation   
 ```
-@article{thisonecoolstory,
-  title={Metabolomic profiles predict individual multi-disease outcomes in the UK Biobank cohort},
-  author={Jakob Steinfeldt, Thore Buergel},
-  journal={tbd},
-  year={2022}
+@article{buergel2022metabolomic,
+  title={Metabolomic profiles predict individual multidisease outcomes},
+  author={Buergel, Thore and Steinfeldt, Jakob and Ruyoga, Greg and Pietzner, Maik and Bizzarri, Daniele and Vojinovic, Dina and Upmeier zu Belzen, Julius and Loock, Lukas and Kittner, Paul and Christmann, Lara and others},
+  journal={Nature Medicine},
+  pages={1--12},
+  year={2022},
+  publisher={Nature Publishing Group}
 }
 ```  
